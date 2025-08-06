@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Users, Target, Heart, Star, Award } from "lucide-react";
+import { BookOpen, Users, Target, Heart, Star, Award, User, UserCheck } from "lucide-react";
 import studentsImage from "@/assets/students-learning.jpg";
 import islamicPattern from "@/assets/islamic-pattern.jpg";
 
@@ -38,6 +38,22 @@ const About = () => {
     { number: "2", label: "Lokasi Kampus", icon: Users },
     { number: "100+", label: "Siswa Aktif", icon: Star },
     { number: "15+", label: "Tenaga Pendidik", icon: Award }
+  ];
+
+  const yayasanStructure = [
+    { position: "Pembina", name: "Elvin Sasmita E., S. Kom.", icon: UserCheck },
+    { position: "Pengawas", name: "Iwan Setiawan, Lc.", icon: User },
+    { position: "Ketua", name: "Sahril Mubarak", icon: Users },
+    { position: "Sekretaris", name: "Ahmad Arief Rosjidi", icon: User },
+    { position: "Bendahara", name: "Muhammad Ilham Sembodo", icon: User },
+    { position: "Ketua PKBM Kuttab", name: "Ikhsan Sahid Sanjani, S.E.I.", icon: Award }
+  ];
+
+  const pkbmStructure = [
+    { position: "Kepala PKBM Kuttab", name: "Ikhsan Sahid Sanjani, S.E.I.", icon: Award },
+    { position: "Koordinator Kelas Tinggi", name: "Alaudin Naufal As Siraj, S.E.I", icon: Users },
+    { position: "Koordinator Kelas Rendah", name: "Raysman Hakim", icon: Users },
+    { position: "Koordinator Keuangan dan Tata Usaha", name: "Krisnha Octavianus, S.Kom.", icon: User }
   ];
 
   return (
@@ -100,6 +116,55 @@ const About = () => {
                       <Icon className="w-8 h-8 text-islamic-blue mx-auto mb-2" />
                       <h4 className="text-2xl font-bold text-islamic-green">{item.number}</h4>
                       <p className="text-sm text-muted-foreground">{item.label}</p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Organizational Structure */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-islamic-green text-center mb-12">
+            Struktur Organisasi
+          </h3>
+          
+          {/* Yayasan Structure */}
+          <div className="mb-12">
+            <h4 className="text-xl font-semibold text-islamic-green mb-6 text-center">
+              Yayasan Taawun Wakaf Indonesia
+            </h4>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {yayasanStructure.map((member, index) => {
+                const Icon = member.icon;
+                return (
+                  <Card key={index} className="p-4 bg-white shadow-soft hover:shadow-medium transition-all duration-300">
+                    <CardContent className="p-0 text-center">
+                      <Icon className="w-8 h-8 text-islamic-blue mx-auto mb-2" />
+                      <h5 className="font-semibold text-islamic-green mb-1">{member.position}</h5>
+                      <p className="text-sm text-muted-foreground">{member.name}</p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* PKBM Structure */}
+          <div className="mb-12">
+            <h4 className="text-xl font-semibold text-islamic-green mb-6 text-center">
+              PKBM Kuttab Al-Fatih Bogor
+            </h4>
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-4xl mx-auto">
+              {pkbmStructure.map((member, index) => {
+                const Icon = member.icon;
+                return (
+                  <Card key={index} className="p-4 bg-white shadow-soft hover:shadow-medium transition-all duration-300">
+                    <CardContent className="p-0 text-center">
+                      <Icon className="w-8 h-8 text-islamic-blue mx-auto mb-2" />
+                      <h5 className="font-semibold text-islamic-green mb-1">{member.position}</h5>
+                      <p className="text-sm text-muted-foreground">{member.name}</p>
                     </CardContent>
                   </Card>
                 );
