@@ -18,6 +18,9 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        hero: "bg-gradient-primary text-white hover:shadow-medium transform hover:scale-105 transition-all duration-300",
+        islamic: "bg-islamic-green text-white hover:bg-islamic-blue shadow-soft hover:shadow-medium transition-all duration-300",
+        gold: "bg-islamic-gold text-islamic-green hover:bg-islamic-gold/90 shadow-soft hover:shadow-medium transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
